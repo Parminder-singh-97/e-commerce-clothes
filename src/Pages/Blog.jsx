@@ -13,7 +13,7 @@ const Blog = () => {
       <Layout>
           <h1 className="text-center p-6">Blogs</h1>
         <div className="flex gap-4 flex-wrap justify-center p-6">
-          {BlogData?.map((article, id) => {
+          {BlogData.map((article, id) => {
             const { title, urlToImage, description, publishedAt } = article;
 
             return (
