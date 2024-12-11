@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../Components/layouts/Layout.jsx";
 import {allProducts} from '../Components/Utils/ProductData.js'
 import { Link, useNavigate } from "react-router";
 import Star from "../Components/CustomComponents/Star.jsx";
+import { fetchBlogData } from "../Redux/Slicer/BlogData.js";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   function GotoSingleProduct(id){
 
@@ -16,6 +19,10 @@ const Home = () => {
 
 
   }
+  useEffect(() => {
+    dispatch(fetchBlogData());
+  }, []);
+
   return (
     <>
       <Layout>
