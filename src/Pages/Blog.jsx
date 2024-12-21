@@ -6,6 +6,9 @@ import { fetchBlogData } from "../Redux/Slicer/BlogData";
 const Blog = () => {
   const dispatch = useDispatch();
   const BlogData = useSelector((state) => state.BlogSlicer.data.articles);
+  useEffect(() => {
+    dispatch(fetchBlogData());
+  }, []);
 
 
   return (

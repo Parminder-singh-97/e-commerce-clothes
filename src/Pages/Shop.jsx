@@ -3,7 +3,7 @@ import Layout from "../Components/layouts/Layout";
 import { allProducts } from "../Components/Utils/ProductData";
 import { Link, useNavigate } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
-// import { addProduct } from "../Redux/Slicer/ClickProductSlicer";
+
 import { addtoCart } from "../Redux/Slicer/CartSlicer";
 import Star from "../Components/CustomComponents/Star";
 import FlyingUpArrow from "../Components/CustomComponents/FlyingUpArrow";
@@ -21,7 +21,7 @@ const Shop = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Smooth scrolling effect
+      behavior: "smooth",
     });
   };
 
@@ -29,7 +29,6 @@ const Shop = () => {
     <>
       <Layout>
         <section id="feature1" className="section-p1 relative">
-    
           <div className=" font-extrabold text-[30px] pro_head">
             Our Products
           </div>
@@ -39,7 +38,7 @@ const Shop = () => {
                 <div
                   onClick={() => {
                     GotoSingleProduct(product.id);
-                    scrollToTop()
+                    scrollToTop();
                   }}
                   className="pro"
                   key={product.id}
@@ -62,60 +61,6 @@ const Shop = () => {
         </section>
 
         <section id="pagination" className="section-p1 container mx-auto">
-          {/* <div className="join ">
-            <input
-              className="  join-item btn btn-square text-white bg-[#088178] checked:bg-green-700 active:bg-green-700 "
-              type="radio"
-              name="options"
-              aria-label="1"
-              defaultChecked
-            />
-            <input
-              className="join-item btn btn-square text-white border-none bg-[#088178]"
-              type="radio"
-              name="options"
-              aria-label="2"
-            />
-            <input
-              className="join-item btn btn-square text-white border-none bg-[#088178]"
-              type="radio"
-              name="options"
-              aria-label="3"
-            />
-            <input
-              className="join-item btn btn-square text-white border-none bg-[#088178]"
-              type="radio"
-              name="options"
-              aria-label="4"
-            />
-          </div> */}
-          {/* <div className="join">
-            <input
-              className="join-item btn btn-square bg-blue-500 text-white checked:bg-green-500 checked:text-white"
-              type="radio"
-              name="options"
-              aria-label="1"
-              defaultChecked
-            />
-            <input
-              className="join-item btn btn-square bg-blue-500 text-white checked:bg-green-500 checked:text-white"
-              type="radio"
-              name="options"
-              aria-label="2"
-            />
-            <input
-              className="join-item btn btn-square bg-blue-500 text-white checked:bg-green-500 checked:text-white"
-              type="radio"
-              name="options"
-              aria-label="3"
-            />
-            <input
-              className="join-item btn btn-square bg-blue-500 text-white checked:bg-green-500 checked:text-white"
-              type="radio"
-              name="options"
-              aria-label="4"
-            />
-          </div> */}
           <div className="join grid grid-cols-2 w-full">
             <button className="join-item btn btn-outline">Previous page</button>
             <button className="join-item btn btn-outline">Next</button>

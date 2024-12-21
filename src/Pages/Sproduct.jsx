@@ -3,7 +3,7 @@ import Layout from "../Components/layouts/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router";
 import { allProducts } from "../Components/Utils/ProductData";
-// import { addProduct } from "../Redux/Slicer/ClickProductSlicer";
+
 import { addtoCart } from "../Redux/Slicer/CartSlicer";
 import { Warning } from "postcss";
 import Star from "../Components/CustomComponents/Star";
@@ -14,14 +14,10 @@ const Sproduct = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
 
-  //All States
   const [size, setSize] = useState();
   const [quantity, setQuantity] = useState(1);
 
   console.log(size, quantity);
-
-  //  funtions
-
 
   const product = allProducts.find((item) => {
     return item.id == Number(id);
@@ -38,7 +34,6 @@ const Sproduct = () => {
     dispatch(addtoCart({ ...product, id, size, quantity }));
   };
 
-  
   return (
     <>
       <Layout>
@@ -112,10 +107,7 @@ const Sproduct = () => {
                   />
                 </div>
                 {/* Add to Cart Button */}
-                <button
-                  // onClick={() => dispatch(addtoCart(product))}
-                  className="px-6 py-2 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-colors"
-                >
+                <button className="px-6 py-2 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-colors">
                   Add to Cart
                 </button>
 
@@ -144,7 +136,6 @@ const Sproduct = () => {
               any wardrobe.
             </p>
           </div>
-
         </div>
       </Layout>
     </>
@@ -152,208 +143,3 @@ const Sproduct = () => {
 };
 
 export default Sproduct;
-
-// const Sproduct = () => {
-//   const productclick = useSelector((state) => state.clickProductSlicer.product);
-//   const [product, setProduct] = useState({});
-
-// console.log(product)
-
-// useEffect(() => {
-//   // Check if there's a product saved in localStorage
-//   const savedProduct = localStorage.getItem("product");
-//   if (savedProduct) {
-//     setProduct(JSON.parse(savedProduct));
-//   } else {
-//     setProduct(productclick); // If nothing in localStorage, use redux state
-//   }
-// }, [productclick]);
-
-// useEffect(() => {
-//   // Remove the product from localStorage before updating
-//   if (product && Object.keys(product).length > 0) {
-//     localStorage.removeItem("product");
-//     localStorage.setItem("product", JSON.stringify(product));
-//   }
-// }, [product]);
-
-//   return (
-//     <>
-//       <Layout>
-//         <section id="product_details" className="section-p1">
-//           <div className="single_pro_img">
-//             <img
-//               src={product.image}
-//               width="100%"
-//               alt=""
-//               id="main_image"
-//             />
-//             <div className="small_img_group">
-//               <div className="small_img_col">
-//                 <img
-//                   src="img/products/f1.jpg"
-//                   width="100%"
-//                   className="small_img"
-//                   alt=""
-//                 />
-//               </div>
-//               <div className="small_img_col">
-//                 <img
-//                   src="img/products/f2.jpg"
-//                   width="100%"
-//                   className="small_img"
-//                   alt=""
-//                 />
-//               </div>
-//               <div className="small_img_col">
-//                 <img
-//                   src="img/products/f3.jpg"
-//                   width="100%"
-//                   className="small_img"
-//                   alt=""
-//                 />
-//               </div>
-//               <div className="small_img_col">
-//                 <img
-//                   src="img/products/f4.jpg"
-//                   width="100%"
-//                   className="small_img"
-//                   alt=""
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//           <div className="single_pro_details">
-//             <h6>Home / T-shirt</h6>
-//             <h4>Men's Fashion T-shirt</h4>
-//             <h2>$139.00</h2>
-//             <select name="" id="">
-//               <option value="">select Size</option>
-//               <option value="">XL</option>
-//               <option value="">XXL</option>
-//               <option value="">small</option>
-//               <option value="">large</option>
-//             </select>
-//             <input type="number" name="" id="" defaultValue={1} />
-//             <button className="btn_transP"> Add To Cart</button>
-//             <h4>product Details</h4>
-//             <span>
-//               The Gildon Ultra Cotton T-shirt is made from a substantial 6.0 Oz.
-//               per sq.yd. fabric constructed from 100% cotton, this classic fit
-//               preshrunk jersey knit provide unmatched comfort with each wear.
-//               Featurinf a tap nect and shoulder, and a seamless double-needle
-//               coller, and available in a range of color, it offer ot all in the
-//               ultimate head-turning package.
-//             </span>
-//           </div>
-//         </section>
-//         <section id="feature1" className="section-p1">
-//           <div className="pro_head">
-//             <h2>Featured Products</h2>
-//             <p>Summer collection New modern</p>
-//           </div>
-//           <div className="pro_container">
-//             <div className="pro">
-//               <img src="img/products/n5.jpg" alt="" />
-//               <div className="des">
-//                 <span>Adidas</span>
-//                 <h5>Cartoon Astronaut T-Shirts</h5>
-//                 <div className="star">
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                 </div>
-//                 <div className="price_cart">
-//                   <h4>$79</h4>
-//                   <a href="#" className="fal fa-shopping-cart" />
-//                 </div>
-//               </div>
-//             </div>
-//             <div className="pro">
-//               <img src="img/products/n6.jpg" alt="" />
-//               <div className="des">
-//                 <span>Adidas</span>
-//                 <h5>Cartoon Astronaut T-Shirts</h5>
-//                 <div className="star">
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                 </div>
-//                 <div className="price_cart">
-//                   <h4>$75</h4>
-//                   <a href="#" className="fal fa-shopping-cart" />
-//                 </div>
-//               </div>
-//             </div>
-//             <div className="pro">
-//               <img src="img/products/n7.jpg" alt="" />
-//               <div className="des">
-//                 <span>Adidas</span>
-//                 <h5>Cartoon Astronaut T-Shirts</h5>
-//                 <div className="star">
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                 </div>
-//                 <div className="price_cart">
-//                   <h4>$70</h4>
-//                   <a href="#" className="fal fa-shopping-cart" />
-//                 </div>
-//               </div>
-//             </div>
-//             <div className="pro">
-//               <img src="img/products/n8.jpg" alt="" />
-//               <div className="des">
-//                 <span>Adidas</span>
-//                 <h5>Cartoon Astronaut T-Shirts</h5>
-//                 <div className="star">
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                   <i className="fas fa-star" />
-//                 </div>
-//                 <div className="price_cart">
-//                   <h4>$60</h4>
-//                   <a href="#" className="fal fa-shopping-cart" />
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </section>
-//         <section id="newsletters">
-//           <img src="img/banner/b14.png" alt="" />
-//           <div className="left">
-//             <h4>Sign Up For Newsletters</h4>
-//             <p>
-//               Get E-mails updates about our latest shop and{" "}
-//               <span>Special offers</span>
-//             </p>
-//           </div>
-//           <div className="right">
-//             <input
-//               type="text"
-//               name="search"
-//               id="searchBar"
-//               placeholder="Enter your E-mail "
-//             />
-//             <button
-//               type="submit"
-//               className="normal_btn"
-//               style={{ backgroundColor: "#088178", color: "white" }}
-//             >
-//               Sign Up
-//             </button>
-//           </div>
-//         </section>
-//       </Layout>
-//     </>
-//   );
-
-// };

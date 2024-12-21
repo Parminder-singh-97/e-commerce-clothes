@@ -6,7 +6,7 @@ function WorkInProgress() {
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 text-center p-6">
       <div className="max-w-md">
         {/* Header */}
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">
           🚧 Work In Progress 🚧
         </h1>
         {/* Description */}
@@ -16,16 +16,17 @@ function WorkInProgress() {
         {/* Decorative Illustration */}
         <div className="flex justify-center mb-6">
           <img
-            src="https://via.placeholder.com/400x300?text=Under+Construction"
+            src="https://images.unsplash.com/photo-1515041219749-89347f83291a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Under Construction"
             className="rounded-lg shadow-lg"
           />
         </div>
         {/* Button */}
-        <Link to={'/'}>
+        <Link to={'/home'}>
+        
         
         <button
-          onClick={() => window.location.href = "/"}
+          // onClick={() => window.location.href = "/home"}
           className="bg-teal-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200"
         >
           Go Back to Homepage

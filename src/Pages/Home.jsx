@@ -1,27 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Layout from "../Components/layouts/Layout.jsx";
-import {allProducts} from '../Components/Utils/ProductData.js'
+import { allProducts } from "../Components/Utils/ProductData.js";
 import { Link, useNavigate } from "react-router";
 import Star from "../Components/CustomComponents/Star.jsx";
-import { fetchBlogData } from "../Redux/Slicer/BlogData.js";
 import { useDispatch } from "react-redux";
 
 const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  function GotoSingleProduct(id){
+  function GotoSingleProduct(id) {
+    console.log(id);
 
-    console.log(id) 
-   
     navigate(`/sproduct/${id}`);
-
-
-
   }
-  useEffect(() => {
-    dispatch(fetchBlogData());
-  }, []);
 
   return (
     <>
@@ -32,8 +24,8 @@ const Home = () => {
             <h2>Super value deals</h2>
             <h1>On all products</h1>
             <p>Save more with coupons &amp; 70% Off !</p>
-            <Link to={'/shop'}>
-            <button>Shop Now</button>
+            <Link to={"/shop"}>
+              <button>Shop Now</button>
             </Link>
           </div>
         </section>
@@ -63,82 +55,76 @@ const Home = () => {
             <h6>F24/7 Support</h6>
           </div>
         </section>
-        <section id="feature1" className="section-p1">
+        <section id="feature1" className=" py-[80px] px-[40px]">
           <div className="pro_head">
             <h2>featured Products</h2>
             <p>Summer collection New modern</p>
           </div>
           <div className="pro_container">
-          {allProducts.slice(0,8).map((product) => {
-              return(<div onClick={()=>{
-                
-                GotoSingleProduct(product.id)
-                // dispatch(addProduct(product))
-                }} className="pro" key={product.id}>
-                <img src={product.image} alt="" />
-                <div className="des">
-                  <span>{product.brand}</span>
-                  <h5>{product.name}</h5>
-                  <div className="star">
-                    <i className="fas fa-star" />
-                    <i className="fas fa-star" />
-                    <i className="fas fa-star" />
-                    <i className="fas fa-star" />
-                    <i className="fas fa-star" />
+            {allProducts.slice(0, 8).map((product, id) => {
+              return (
+                <div
+                  onClick={() => {
+                    GotoSingleProduct(product.id);
+                  }}
+                  className="pro"
+                  key={id - 0.1}
+                >
+                  <img src={product.image} alt="" />
+                  <div className="des">
+                    <span>{product.brand}</span>
+                    <h5>{product.name}</h5>
+                    <div className="star">
+                      <Star rating={product.star} />
+                    </div>
+                    <div className="price_cart">
+                      <h4> &#x20B9; {product.price}</h4>
+                    </div>
                   </div>
-                  <div className="price_cart">
-                    <h4> &#x20B9; {product.price}</h4>
-                    
-
-                  </div>
-            
-
                 </div>
-              </div>
-              )
+              );
             })}
           </div>
         </section>
         <section id="banner" className="section-m1">
           <h4 className="text-white">Repair Service</h4>
           <h2 className="text-white">
-            Up to <span className="text-red-600">70% Off</span> - All t-Shirts &amp; Accessories
+            Up to <span className="text-red-600">70% Off</span> - All t-Shirts
+            &amp; Accessories
           </h2>
-          <Link to={'/shop'}>
-          <button className="normal_btn text-black">Explore More</button>
+          <Link to={"/shop"}>
+            <button className="normal_btn text-black">Explore More</button>
           </Link>
         </section>
-        <section id="feature1" className="section-p1">
+        <section id="feature1" className=" py-[80px] px-[40px] ">
           <div className="pro_head">
             <h2>New Arrivals</h2>
             <p>Summer collection New modern</p>
           </div>
           <div className="pro_container">
-          {allProducts.slice(8).map((product) => {
-              return(<div onClick={()=>{
-                
-                GotoSingleProduct(product.id)
-                // dispatch(addProduct(product))
-                }} className="pro" key={product.id}>
-                <img src={product.image} alt="" />
-                <div className="des">
-                  <span>{product.brand}</span>
-                  <h5>{product.name}</h5>
-                  <div className="star">
-                  <Star rating={product.star}/>
+            {allProducts.slice(8).map((product, id) => {
+              return (
+                <div
+                  onClick={() => {
+                    GotoSingleProduct(product.id);
+                  }}
+                  className="pro"
+                  key={id - 0.2}
+                >
+                  <img src={product.image} alt="" />
+                  <div className="des">
+                    <span>{product.brand}</span>
+                    <h5>{product.name}</h5>
+                    <div className="star">
+                      <Star rating={product.star} />
+                    </div>
+                    <div className="price_cart">
+                      <h4>&#x20B9; {product.price}</h4>
+                    </div>
+                    <div className=" m-auto w-[50%]"></div>
                   </div>
-                  <div className="price_cart">
-                    <h4>&#x20B9; {product.price}</h4>
-                    
-
-                  </div>
-                    <div className=" m-auto w-[50%]">
-               
                 </div>
-
-                </div>
-              </div>
-              )
+              );
             })}
           </div>
         </section>

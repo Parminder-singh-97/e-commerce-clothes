@@ -19,17 +19,17 @@ body {
 html {
   scroll-behavior: smooth;
 }
-textarea{
+textarea {
   background-color: white;
 }
-option{
+option {
   background-color: white;
 }
-select{
+select {
   background-color: white;
 }
 /* Global Styles */
-input{
+input {
   background-color: white;
 }
 h1 {
@@ -89,7 +89,7 @@ button.btn_transP {
   outline: none;
   transition: 0.5s ease;
 }
-button{
+button {
   transition: 0.3s ease;
 }
 
@@ -104,6 +104,15 @@ button{
 body {
   width: 100%;
   /* position: relative; */
+}
+
+/* login and SignUP background image */
+.login-bg {
+  background-image: url("../images/login-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
 }
 
 /* header section ----------- */
@@ -121,8 +130,7 @@ body {
   top: 0;
   left: 0;
 }
-.fa-bars{
-  
+.fa-bars {
   display: none;
   font-size: 30px;
 }
@@ -130,7 +138,6 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
-  
 }
 #navbar li {
   list-style: none;
@@ -172,10 +179,9 @@ body {
 /* herooo------------------ */
 #hero {
   width: 100%;
-  background-image: url("/images/hero4.png") ;
+  background-image: url("/images/hero4.png");
   background-size: cover;
   background-position: center;
-  
 
   height: 90vh;
   display: flex;
@@ -334,7 +340,7 @@ body {
 .fa-star {
   color: rgb(237, 201, 0);
 }
- 
+
 .price_cart {
   margin-top: 10px;
   width: 100%;
@@ -563,16 +569,15 @@ button:hover {
   font-weight: 500;
   padding: 0 10px;
   margin-right: 10px;
-  
+
   border-radius: 10px;
   width: 300px;
   height: 45px;
 }
 
-
 /* footer ----------------------------- */
 
-footer{
+footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -580,34 +585,30 @@ footer{
   gap: 10px;
 }
 
-footer .col{
+footer .col {
   padding-top: 30px;
   padding-left: 20px;
- display: flex;
- flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-footer .col img{
- width: 175px;
- padding-bottom: 20px;
+footer .col img {
+  width: 175px;
+  padding-bottom: 20px;
 }
-footer .col a{
+footer .col a {
   text-decoration: none;
   color: black;
   padding-bottom: 20px;
 }
 
-.copyright{
+.copyright {
   width: 100%;
   text-align: center;
 }
 
-
-
-
 /* shop Page--------------------- */
 
-
-#page_header{
+#page_header {
   background-image: url("/images/banner/b1.jpg");
   width: 100%;
   height: 40vh;
@@ -617,24 +618,20 @@ footer .col a{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-
 }
 
-#pagination{
+#pagination {
   text-align: center;
-  
 }
-#pagination a{
+#pagination a {
   text-decoration: none;
   color: white;
   background-color: #088178;
-  padding: 15px 20px ;
+  padding: 15px 20px;
   border-radius: 4px;
   font-weight: 600;
-
 }
-#pagination a i{
+#pagination a i {
   font-size: 16px;
   font-weight: 600;
 }
@@ -645,140 +642,113 @@ footer .col a{
   margin-top: 20px;
 }
 
-
-#product_details .single_pro_img{
-width: 40%;
-margin-right: 50px;
+#product_details .single_pro_img {
+  width: 40%;
+  margin-right: 50px;
 }
-#product_details .small_img_group{
+#product_details .small_img_group {
   display: flex;
-  
+
   justify-content: space-between;
   align-items: center;
- 
-
 }
-#product_details .small_img_col{
+#product_details .small_img_col {
   flex-basis: 24%;
   cursor: pointer;
 }
-#product_details .single_pro_details{
+#product_details .single_pro_details {
   width: 50%;
   padding-top: 30px;
-
 }
-#product_details .single_pro_details h4{
-  padding: 40px 0 20px 0 ;
+#product_details .single_pro_details h4 {
+  padding: 40px 0 20px 0;
 }
-#product_details .single_pro_details h2{
+#product_details .single_pro_details h2 {
   font-size: 26px;
 }
-#product_details .single_pro_details select{
- display: block;
- padding: 5px 10px;
- margin-bottom: 10px;
-
+#product_details .single_pro_details select {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
 }
-#product_details .single_pro_details input{
- width: 50px;
- height: 47px;
- padding-left: 10px;
- font-size: 16px;
- margin-right: 10px;
-
+#product_details .single_pro_details input {
+  width: 50px;
+  height: 47px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
 }
-#product_details .single_pro_details input:focus{
+#product_details .single_pro_details input:focus {
   outline: none;
-
 }
-#product_details .single_pro_details span{
+#product_details .single_pro_details span {
   line-height: 25px;
 }
 
-
-
-
 /* responsive -------------------------- */
-@media screen and (max-width: 640px){
-  
+@media screen and (max-width: 640px) {
   #header {
-   
-      justify-content:space-around;
-    
-   
+    justify-content: space-around;
   }
   #hero {
     width: 100%;
     background-image: url("/images/hero4.png");
     background-size: cover;
     background-position: right 30% center;
-}
+  }
   .hero_left {
     padding: 0px 20px;
     /* background-color: #e3e6f3; */
     width: 100%;
-}
-  .fa-bars{
-  
+  }
+  .fa-bars {
     display: block;
     font-size: 30px;
   }
-  nav{
+  nav {
     display: none;
   }
   #sm_banner .banner_box1 {
     min-width: 90vw;
     height: 50vh;
- 
-}
-
-#sm_banner .banner_box2 {
-  min-width: 90vw;
-  height: 50vh;
- 
-}
-#newsletters {
- 
-  flex-direction: column;
-  
-}
-#newsletters .left {
-  width: 90vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-}
-@media screen and (max-width:375px){
-  #banner3 .banner3_1 {
-  
-    min-width:90vw;
-    height: 25vh;
-    
   }
-  
-  #banner3 .banner3_2 {
-  
-    min-width:90vw;
+
+  #sm_banner .banner_box2 {
+    min-width: 90vw;
+    height: 50vh;
+  }
+  #newsletters {
+    flex-direction: column;
+  }
+  #newsletters .left {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 375px) {
+  #banner3 .banner3_1 {
+    min-width: 90vw;
     height: 25vh;
-    
+  }
+
+  #banner3 .banner3_2 {
+    min-width: 90vw;
+    height: 25vh;
   }
   #banner3 .banner3_3 {
-  
-    min-width:90vw;
+    min-width: 90vw;
     height: 25vh;
-    
   }
   .banner3_1 :nth-child(1) {
     font-size: 7vw;
-}
+  }
   .banner3_2 :nth-child(1) {
     font-size: 5vw;
-}
+  }
   .banner3_3 :nth-child(1) {
     font-size: 7vw;
-}
-  
+  }
 }

@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import clickProductSlicer from './Slicer/ClickProductSlicer';
 import CartSlicer from '../Redux/Slicer/CartSlicer'
 import BlogSlicer from './Slicer/BlogData'
+import AuthSlicer from './Slicer/AuthSlicer'
 
 
 const store = configureStore({
@@ -9,6 +10,7 @@ const store = configureStore({
     clickProductSlicer: clickProductSlicer,
     cartSlicer: CartSlicer,
     BlogSlicer:BlogSlicer,
+    AuthSlicer: AuthSlicer, 
   },
 });
 

@@ -1,7 +1,10 @@
 import React from "react";
 import Layout from "../Components/layouts/Layout";
+import { useSelector } from "react-redux";
 
 const About = () => {
+  const isauth = useSelector((State) => State.AuthSlicer.isAuthenticated)
+  console.log(isauth)
   return (
     <>
       <Layout>
