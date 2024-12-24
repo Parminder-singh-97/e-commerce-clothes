@@ -4,6 +4,7 @@ import { allProducts } from "../Components/Utils/ProductData.js";
 import { Link, useNavigate } from "react-router";
 import Star from "../Components/CustomComponents/Star.jsx";
 import { useDispatch } from "react-redux";
+import { motion } from "motion/react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -18,6 +19,12 @@ const Home = () => {
   return (
     <>
       <Layout>
+        <motion.div 
+        initial={{ opacity: 0, }}
+        animate={{ opacity: 1, }}
+        transition={{ duration: 1.5 }}>
+
+      
         <section id="hero">
           <div className="hero_left">
             <h4>Trade-in-offer</h4>
@@ -185,6 +192,7 @@ const Home = () => {
             </button>
           </div>
         </section>
+        </motion.div>
       </Layout>
     </>
   );

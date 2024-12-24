@@ -12,6 +12,7 @@ import { useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons/faPenToSquare";
 import { faTrash } from "@fortawesome/free-solid-svg-icons/faTrash";
+import { motion } from "motion/react";
 
 const Cart = () => {
   const [cartAmount, setCartAmount] = useState();
@@ -27,6 +28,11 @@ const Cart = () => {
   return (
     <>
       <Layout>
+        <motion.div
+        initial={{ opacity: 0, }}
+        animate={{ opacity: 1, }}
+        transition={{ duration: 1.5 }}>
+
         <h1 className="text-4xl font-bold text-center py-10 text-blue-800">
           Shopping Cart
         </h1>
@@ -167,6 +173,7 @@ const Cart = () => {
             )}
           </div>
         )}
+        </motion.div>
       </Layout>
     </>
   );

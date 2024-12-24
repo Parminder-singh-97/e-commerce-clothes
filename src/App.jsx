@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navigate,
   RouterProvider,
@@ -15,12 +15,14 @@ import Sproduct from "./Pages/Sproduct";
 import WorkInProgress from "./Pages/WorkInProgress";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
+import HashLoader
+from "react-spinners/HashLoader";
 
 const ProtectRoutes = ({ element }) => {
   const isAuthenticated = useSelector(
     (state) => state.AuthSlicer.isAuthenticated
   );
- 
+
   return isAuthenticated ? element : <Navigate to="/login" replace />;
 };
 
@@ -52,7 +54,34 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  const [isLoading, setisLoading] = useState(true);
+  useEffect(() => {
+    const handleWindowLoading = () => {
+      setisLoading(false);
+    };
+
+    window.addEventListener("load", handleWindowLoading);
+
+    return () => {
+      window.removeEventListener("load", handleWindowLoading);
+    };
+  }, []);
+
+  return isLoading ? (
+    <div className="flex flex-col gap-9 w-full h-screen justify-center items-center">
+      <HashLoader
+        color={'rgb(13 148 136 '}
+        loading={isLoading}
+       
+        size={100}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+      <p className="text-black text-2xl font-extrabold">Loading...</p>
+    </div>
+  ) : (
+    <RouterProvider router={router} />
+  );
 };
 
 export default App;

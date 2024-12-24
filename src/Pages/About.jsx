@@ -1,6 +1,8 @@
 import React from "react";
 import Layout from "../Components/layouts/Layout";
 import { useSelector } from "react-redux";
+import { motion } from "motion/react"
+
 
 const About = () => {
   const isauth = useSelector((State) => State.AuthSlicer.isAuthenticated)
@@ -8,7 +10,12 @@ const About = () => {
   return (
     <>
       <Layout>
-        <div className="about-container bg-gray-100 py-10 px-4 sm:px-8 lg:px-16">
+        <motion.div 
+        initial={{ opacity: 0, }}
+        animate={{ opacity: 1, }}
+        transition={{ duration: 1.5 }}
+
+        className="about-container bg-gray-100 py-10 px-4 sm:px-8 lg:px-16">
           <h1 className="text-3xl font-bold text-center mb-8">About Us</h1>
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
             <div className="flex flex-col lg:flex-row items-center gap-6">
@@ -39,7 +46,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Layout>
     </>
   );

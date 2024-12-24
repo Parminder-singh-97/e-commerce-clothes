@@ -9,6 +9,7 @@ import { Warning } from "postcss";
 import Star from "../Components/CustomComponents/Star";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "motion/react";
 
 const Sproduct = () => {
   const { id } = useParams();
@@ -37,7 +38,11 @@ const Sproduct = () => {
   return (
     <>
       <Layout>
-        <div className="container mx-auto my-8 px-4">
+        <motion.div 
+         initial={{ opacity: 0,scale : 0.98 }}
+         animate={{ opacity: 1, scale : 1 }}
+         transition={{ duration: 1 }}
+        className="container mx-auto my-8 px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Product Image */}
             <div className="w-full md:w-1/2">
@@ -136,7 +141,7 @@ const Sproduct = () => {
               any wardrobe.
             </p>
           </div>
-        </div>
+        </motion.div>
       </Layout>
     </>
   );

@@ -1,11 +1,17 @@
 import React from "react";
 import Layout from "../Components/layouts/Layout";
+import { motion } from "motion/react";
+
 
 const Contact = () => {
   return (
     <>
       <Layout>
-        <div className="contact-container bg-gray-100 py-10 px-4 sm:px-8 lg:px-16">
+        <motion.div
+        initial={{ opacity: 0, }}
+        animate={{ opacity: 1, }}
+        transition={{ duration: 1.5 }}
+         className="contact-container bg-gray-100 py-10 px-4 sm:px-8 lg:px-16">
           <h1 className="text-3xl font-bold text-center mb-8">Contact Us</h1>
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
             <form className="grid grid-cols-1 gap-6">
@@ -64,7 +70,7 @@ const Contact = () => {
               </div>
             </form>
           </div>
-        </div>
+        </motion.div>
       </Layout>
     </>
   );

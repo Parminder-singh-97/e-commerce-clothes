@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { addtoCart } from "../Redux/Slicer/CartSlicer";
 import Star from "../Components/CustomComponents/Star";
-import FlyingUpArrow from "../Components/CustomComponents/FlyingUpArrow";
+import { motion } from "motion/react";
 
 const Shop = () => {
   const navigate = useNavigate();
@@ -28,6 +28,12 @@ const Shop = () => {
   return (
     <>
       <Layout>
+        <motion.div
+        initial={{ opacity: 0,scale : 0.98 }}
+        animate={{ opacity: 1, scale : 1 }}
+        transition={{ duration: 1 }}>
+
+       
         <section id="feature1" className="section-p1 relative">
           <div className=" font-extrabold text-[30px] pro_head">
             Our Products
@@ -91,6 +97,7 @@ const Shop = () => {
             </button>
           </div>
         </section>
+        </motion.div>
       </Layout>
     </>
   );
