@@ -16,6 +16,7 @@ const Home = () => {
     navigate(`/sproduct/${id}`);
   }
 
+
   return (
     <>
       <Layout>

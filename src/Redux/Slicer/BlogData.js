@@ -33,7 +33,7 @@ export function fetchBlogData() {
     dispatch(setStatus(STATUS.LOADING));
 
     try {
-      const res = await fetch("https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=e1f1bc303c6346f686ba15446a94f234");
+      const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${import.meta.env.VITE_API_KEY}`);
       const data = await res.json();
       dispatch(addBlogData(data));
       dispatch(setStatus(STATUS.SUCCESS));
